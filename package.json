@@ -1,0 +1,57 @@
+{
+  "name": "selahworship",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/react-helmet": "^6.0.0",
+    "@types/webpack-env": "^1.14.0",
+    "fs": "0.0.1-security",
+    "http2": "^3.3.7",
+    "node-sass": "^4.12.0",
+    "pptxgenjs": "^3.2.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-helmet": "^6.0.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.2.0",
+    "typescript": "3.4.5"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.12",
+    "@types/lodash": "^4.14.124",
+    "@types/node": "12.0.0",
+    "@types/react": "16.8.17",
+    "@types/react-dom": "16.8.4",
+    "@types/react-intl": "^2.3.17",
+    "@types/react-router-dom": "^4.3.3",
+    "eslint-plugin-react-hooks": "^1.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "workspaces": [
+    "./src/components/*",
+    "./src/views/*",
+    "./src/logic/*"
+  ],
+  "author": "Sure Bak",
+  "contributors": [
+    "Sure Bak <surebak@gmail.com>"
+  ]
+}

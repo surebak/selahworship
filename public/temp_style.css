@@ -1,0 +1,576 @@
+@font-face {
+  font-family: "Selah";
+  src: url("font/NotoSansKR-Bold.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "Selah";
+  src: url("font/Roboto-Medium.ttf") format("truetype");
+  unicode-range: U+0020-007E;
+}
+
+html {
+  font-size: 16px;
+  --main-color: #794bc4;
+  --key-color: #4caf50;
+  --main-trans: rgba(121, 75, 196, 0.25);
+}
+body {
+  font-family: sans-serif;
+  background: var(--main-color);
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.Songs__list {
+  padding: 10px 24px;
+}
+
+.Songs__list-item {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  margin: 10px;
+}
+
+.Songs__list-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Uploader__title,
+.Uploader__artists {
+  margin: 10px 0;
+  font-size: 20px;
+  padding: 10px;
+  background: black;
+  color: white;
+  -webkit-appearance: none;
+  border: none;
+  margin: 0 10px 10px 0;
+}
+
+textarea.Uploader__lyric {
+  height: 40em;
+  background: black;
+  color: white;
+  padding: 10px;
+  -webkit-appearance: none;
+  border: none;
+}
+
+.Btn__upload {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 999px;
+  display: inline-flex;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.Btn__upload:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.Uploader {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 10px;
+}
+
+.Page__setting-padding-box {
+  width: 70px;
+  height: 40px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  margin: 10px;
+  position: relative;
+}
+
+.Page__setting-padding-box:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  right: 6px;
+  top: 5px;
+  bottom: 5px;
+  border: 1px dashed var(--key-color);
+}
+
+.Page__setting-padding-row {
+  display: flex;
+  justify-content: center;
+}
+
+.App__main {
+  display: flex;
+}
+
+.Logo span {
+  font-size: 10px;
+  margin: 0 0 0 5px;
+  vertical-align: top;
+  color: var(--key-color);
+}
+
+.Page__setting-color,
+.Page__setting-ratio {
+}
+.Align-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  opacity: 0.5;
+  position: relative;
+  margin: 0 4px;
+}
+
+.Align-option.--selected {
+  opacity: 1;
+}
+
+.Align-option.--selected:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 4px);
+  bottom: calc(100% + 4px);
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 999rem;
+}
+
+.Page__setting-align-options {
+  display: flex;
+  /* box-shadow: inset 0 0 0 1px white; */
+  height: 39px;
+  /* width: 160px; */
+  justify-content: space-between;
+}
+
+.Page__setting-align {
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.Page__setting-color,
+.Page__setting-ratio,
+.Page__setting-align,
+.Page__setting-padding {
+  padding: 24px 0;
+  flex-shrink: 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.Page__setting-padding {
+  display: flex;
+  flex-direction: column;
+  border-bottom: none;
+}
+
+.Page__setting-padding-option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Page__setting-padding-option input {
+  -webkit-appearance: none;
+  border: none;
+  font-size: 14px;
+  padding: 4px 10px;
+  width: 4.2em;
+  background: black;
+  color: #666;
+  /* margin: 0 10px 0; */
+  border-radius: 6px;
+}
+
+.Page__setting-padding-option input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--key-color);
+}
+
+.Ratio-option {
+  width: 52px;
+  height: 39px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  opacity: 0.5;
+}
+
+.Ratio-option.--wide {
+  width: calc(52px / 3 * 4);
+}
+
+.Ratio-option.--selected:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 4px);
+  bottom: calc(100% + 4px);
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 999rem;
+}
+
+.Ratio-option.--selected {
+  opacity: 1;
+}
+
+.Page__setting-ratio-options {
+  display: flex;
+}
+
+.Color-option {
+  width: 60px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+  margin: 4px;
+  font-size: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.Color-option.--selected:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 4px);
+  bottom: calc(100% + 4px);
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 999rem;
+}
+
+.Color-option.--bright {
+  background: white;
+  color: black;
+}
+
+.App__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px 20px;
+  background: white;
+  color: var(--main-color);
+  box-shadow: 0 6px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.Download {
+  font-size: 16px;
+  padding: 10px 30px 10px 25px;
+  border: 1px solid var(--main-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--main-color);
+  color: white;
+  border-radius: 999rem;
+  font-weight: bold;
+  transition: 0.2s;
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.Download:active {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.Download:hover {
+  background: var(--main-trans);
+  cursor: pointer;
+  color: var(--main-color);
+  box-shadow: 0 0px 0 0 rgba(0, 0, 0, 0.2);
+}
+
+.Download .fas {
+  margin: 0 10px 0 0;
+}
+
+input.Text2Slides__input {
+  -webkit-appearance: none;
+  border: none;
+  font-size: 16px;
+  padding: 4px 10px;
+  width: 4em;
+  background: black;
+  color: #666;
+  margin: 0 10px 0;
+  border-radius: 6px;
+}
+
+input.Text2Slides__input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--key-color);
+}
+
+.Page__setting {
+  flex-direction: column;
+  display: flex;
+  padding: 20px 0;
+  margin: 6px 20px 0 0;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.3); */
+  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.Logo {
+  color: inherit;
+  font-size: 24px;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.Settings {
+  /* display: none; */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.Text2Slides {
+  /* height: 80vh; */
+  /* overflow: hidden; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(0, 0, 0, 0.35);
+  /* border-radius: 10px; */
+  box-shadow: 0 7px 0 rgba(0, 0, 0, 0.15);
+  /* padding: 10px; */
+  margin: 0 0 20px;
+}
+
+.Slide__container {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.Slide__padding-viewer {
+  position: absolute;
+  border: 1px dashed var(--key-color);
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
+}
+
+.Slide:hover .Slide__padding-viewer {
+  opacity: 1;
+}
+
+.App.--paddingView .Slide__padding-viewer {
+  opacity: 1;
+}
+
+.Text2Slides.--paddingView .Slide__padding-viewer {
+  opacity: 1;
+}
+
+.Rendering__scroll-area {
+  overflow-y: auto;
+  width: 100%;
+  padding: 20px 0;
+  /* overflow-x: visible; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  /* align-content: flex-start; */
+  /* align-items: flex-start; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr; */
+}
+
+.Generate {
+  background: #2196f3;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  display: inline-flex;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 0;
+  flex-shrink: 0;
+  display: none;
+}
+
+.Rendering {
+  display: flex;
+  flex-shrink: 0;
+  flex: 1;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* align-content: flex-start; */
+  /* align-items: flex-start; */
+  /* padding: 20px 0 0; */
+  overflow: hidden;
+}
+
+.Slide__line {
+  display: flex;
+  line-height: 120%;
+  font-weight: bold;
+  /* text-align: center; */
+}
+
+.Slide__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: inherit;
+}
+
+.Slide__block:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+.Slide {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: "Selah";
+  margin: 0 0 10pt;
+  counter-increment: section;
+  text-align: center;
+}
+
+.App.--align-left .Slide {
+  text-align: left;
+  align-items: flex-start;
+}
+.App.--align-right .Slide {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.Slide__line.--kr {
+  letter-spacing: 0.06em;
+}
+
+.Slide:before {
+  content: counter(section);
+  position: absolute;
+  right: 100%;
+  top: 0;
+  font-size: 12px;
+  font-weight: normal;
+  font-family: sans-serif;
+  padding: 0 5px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.Output__block {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 0 1px #ffff0054;
+  justify-content: center;
+  align-items: center;
+}
+
+.Output__line {
+  display: inline-flex;
+  line-height: 120%;
+  box-shadow: inset 0 0 0 1px #ff00005c;
+}
+
+.Input.--sample {
+  flex-shrink: 0;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  /* padding: 20px; */
+}
+
+.Input.--sample textarea {
+  width: 100%;
+  /* height: 50vh; */
+  flex-grow: 1;
+  font-size: 16px;
+  padding: 16px;
+  background: black;
+  color: #aaa;
+  -webkit-appearance: none;
+  border: none;
+  /* border-radius: 6px; */
+  outline: none;
+  height: 50vh;
+}
+
+.Container {
+  display: flex;
+  width: 100%;
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  top: 20px;
+  bottom: 0;
+  flex-grow: 1;
+}
+
+.Convert {
+  display: inline-flex;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.Output.--sample {
+  opacity: 0.2;
+  bottom: 100%;
+  left: 100%;
+  position: fixed;
+  transform: scale(0.3) translate3d(100%, -100%, 0);
+  background: black;
+  color: white;
+  font-size: 16px;
+  flex-shrink: 0;
+  padding: calc(80rem / 16 / 5) calc(100rem / 16 / 5) calc(40rem / 16 / 5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "Malgun gothic";
+  font-weight: bold;
+}
